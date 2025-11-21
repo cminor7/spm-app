@@ -21,7 +21,7 @@ const EmailForm: React.FC = () => {
       {/* FROM field */}
       <div className="form-row">
         <label className="input-label">FROM:</label>
-        <input type="email" placeholder="Your email" />
+        <input type="email"/>
       </div>
 
 <div className="form-row">
@@ -44,13 +44,13 @@ const EmailForm: React.FC = () => {
       {/* CC field */}
       <div className="form-row">
         <label className="input-label">CC:</label>
-        <input type="email" placeholder="CC email" />
+        <input type="email" placeholder="you can add multiple emails like this -> email_1@company.com;email_2@company.com"/>
       </div>
 
       {/* SUBJECT field */}
       <div className="form-row">
         <label className="input-label">SUBJECT:</label>
-        <input type="text" placeholder="Subject" />
+        <input type="text" />
       </div>
 
       

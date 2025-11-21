@@ -6,7 +6,7 @@ import MassEmail from "./pages/MassEmail"
 function App() {
 
   return (
-    <main className='main-cointent'>
+    <main className='app-container'>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/MassEmail' element={<MassEmail />}/>

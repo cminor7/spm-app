@@ -21,8 +21,8 @@
 }
 
 .form-row label {
-  width: 85px; /* slightly wider to fit COLON */
-  font-size: 1rem;
+  width: 100px; /* slightly wider to fit COLON */
+  font-size: 0.95rem;
   color: #cccccc;
   text-transform: uppercase;
   flex-shrink: 0; /* prevent label from shrinking */
@@ -44,7 +44,7 @@ textarea {
   color: white;
   outline: none;
   resize: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 input:focus,

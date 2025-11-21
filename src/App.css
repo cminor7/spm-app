@@ -5,6 +5,15 @@ body {
   font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif; /* choose your preferred font */
   font-size: 16px;    /* base font size */
   line-height: 1.5;   /* improves readability */
-  color: #333;        /* default text color */
-  background-color: #fff; /* optional background */
+  color: white;        /* default text color */
+  /*background-color: #fff;  optional background */
+  background-color: #1e1e1e;
+}
+
+.app-container {
+  background-color: #1e1e1e;
+  min-height: 100vh;   /* full screen height */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }

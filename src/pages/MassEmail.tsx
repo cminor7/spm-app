@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import NavBar from "../components/NavBar";
 import type { NavItem } from "../components/Types";
 import EmailForm from "../components/EmailForm";
@@ -12,17 +12,16 @@ export default function MassEmail() {
   const [statusMessage, setStatusMessage] = useState("Ready");
   const [icon, setIcon] = useState<"info" | "loading" | "success">("info");
 
-    const [darkMode, setDarkMode] = useState(false);
+    const [liveMode, setLiveMode] = useState(false);
 
     const navItems: NavItem[] = [
         { label: "Home", path: "/" },
 
         {
-        label: "Services",
+        label: "Attachments",
         children: [
-            { label: "Web Development", path: "/web" },
-            { label: "Mobile Apps", path: "/mobile" },
-            { label: "UI/UX Design", path: "/design" },
+            { label: "Add file(s)", path: "/web" },
+            { label: "Add folder", path: "/mobile" },
         ],
         },
 
@@ -30,8 +29,8 @@ export default function MassEmail() {
         {
         label: "Live",
         isToggle: true,
-        toggleValue: darkMode,
-        onToggle: (v) => setDarkMode(v),
+        toggleValue: liveMode,
+        onToggle: (v) => setLiveMode(v),
         },
 
         // Button
@@ -58,7 +57,7 @@ export default function MassEmail() {
       if (current > total) {
         clearInterval(interval);
 
-        // 🔥 Change the message when completed
+        // Change the message when completed
         setStatusMessage("Completed!");
         setIcon("success");
 
