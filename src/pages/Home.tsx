@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import type { NavItem } from "../components/Types";
-import EmailForm from "../components/EmailForm";
+
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
