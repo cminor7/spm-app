@@ -1,0 +1,10 @@
+/* App.css */
+body {
+  margin: 0;          /* remove default margin */
+  padding: 0;         /* remove default padding */
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif; /* choose your preferred font */
+  font-size: 16px;    /* base font size */
+  line-height: 1.5;   /* improves readability */
+  color: #333;        /* default text color */
+  background-color: #fff; /* optional background */
+}

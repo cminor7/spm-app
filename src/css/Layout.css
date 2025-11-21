@@ -1,0 +1,7 @@
+.page-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  width: 100%;
+  min-height: 100vh;      /* take full screen height */
+  gap: 0rem;
+}

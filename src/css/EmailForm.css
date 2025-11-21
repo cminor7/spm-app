@@ -1,0 +1,127 @@
+.email-form {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
+  background: #1f1f1f;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  flex: 1;
+  padding-bottom: 4.1rem; /* extra space at the bottom */
+}
+
+.form-row {
+  display: flex;
+  align-items: flex-start; /* aligns input/checkbox with label */
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.form-row label {
+  width: 85px; /* slightly wider to fit COLON */
+  font-size: 1rem;
+  color: #cccccc;
+  text-transform: uppercase;
+  flex-shrink: 0; /* prevent label from shrinking */
+  
+}
+
+.input-label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  flex: 1;
+  min-width: 0; /* allow shrinking inside flex container */
+  background: #2b2b2b;
+  border: 1px solid #3f3f3f;
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: white;
+  outline: none;
+  resize: none;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4fa3ff;
+}
+
+/* Checkboxes */
+.checkbox-group-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  flex: 1; /* let it grow */
+  min-width: 0;
+}
+
+.checkbox-label {
+  display: grid;
+  grid-template-columns: auto 1fr; /* checkbox fixed, text wraps */
+  align-items: center;
+  gap: 0.4rem;
+  word-wrap: break-word;
+  min-width: 0;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0; /* checkbox never disappears */
+  cursor: pointer;
+}
+
+/* Horizontal message row */
+.horizontal-message-row {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  flex: 1;
+  align-items: stretch;
+}
+
+.supplier-column {
+  flex: 1.3;  /* adjust width ratio */
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.1rem;
+  padding-left: 0rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.message-column {
+  flex: 8.7;  /* adjust width ratio */
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 0.2rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.message-column textarea,
+.supplier-column textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #3f3f3f;
+  background: #2b2b2b;
+  color: white;
+  resize: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.message-column label,
+.supplier-column label {
+  margin-bottom: 0.3rem;
+}
