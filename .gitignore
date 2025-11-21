@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+
+# backend local files
+backend/SpmApi/bin/
+backend/SpmApi/obj/
