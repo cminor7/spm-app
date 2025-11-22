@@ -1,19 +1,31 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import type { NavItem } from "./Types";
+import { NavLink, useNavigate } from "react-router-dom";
+import type { NavBarProps } from "./Types";
 import "../css/NavBar.css";
 
-interface Props {
-  items: NavItem[];
-  logoText?: string;
-}
 
-const NavBar: React.FC<Props> = ({ items, logoText = "" }) => {
+const NavBar: React.FC<NavBarProps> = ({ items, logoText = "", logo }) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">{logoText}</div>
+      {/* -------------- LOGO AREA (updated) ---------------- */}
+      <div
+        className="navbar-logo"
+        onClick={() => navigate("/")}
+        style={{ cursor: "pointer" }}
+      >
+        {logo && (
+          <img
+            src={logo}
+            alt="Logo"
+            className="navbar-logo-img"
+          />
+        )}
+        {logoText && <span>{logoText}</span>}
+      </div>
+      {/* --------------------------------------------------- */}
 
       <ul className="navbar-links">
         {items.map((item) => (
@@ -44,10 +56,7 @@ const NavBar: React.FC<Props> = ({ items, logoText = "" }) => {
               </button>
             ) : item.path ? (
               /* 3️⃣ LINK */
-              <NavLink
-                to={item.path}
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
+              <NavLink to={item.path}>
                 {item.label}
               </NavLink>
             ) : (
@@ -60,10 +69,7 @@ const NavBar: React.FC<Props> = ({ items, logoText = "" }) => {
               <ul className="dropdown-menu">
                 {item.children.map((child) => (
                   <li key={child.label}>
-                    <NavLink
-                      to={child.path!}
-                      className={({ isActive }) => (isActive ? "active" : "")}
-                    >
+                    <NavLink to={child.path!}>
                       {child.label}
                     </NavLink>
                   </li>

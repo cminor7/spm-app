@@ -4,6 +4,21 @@ import type { NavItem } from "../components/Types";
 import AppGrid from "../components/AppGrid";
 import {useNavigate } from "react-router-dom";
 import "../css/Layout.css"
+import grainger_logo from "/grainger_logo.png";
+
+const icons = import.meta.glob("../assets/icons/*", {
+  eager: true,
+  import: "default",
+});
+
+const iconMap: Record<string, string> = {};
+
+for (const path in icons) {
+  const name = path.split("/").pop()?.split(".")[0]!;
+  iconMap[name] = icons[path] as string;
+}
+
+
 
 
 export default function Home() {
@@ -12,9 +27,9 @@ export default function Home() {
 const navigate = useNavigate();
 
 const apps = [
-  { name: "Mass Email", icon: "src/assets/email_icon.svg", onClick: () => navigate("/MassEmail") },
-  { name: "Calendar", icon: "/icons/calendar.png" },
-  { name: "Notes", icon: "/icons/notes.png" },
+  { name: "Mass Email", icon: iconMap.mail, onClick: () => navigate("/MassEmail") },
+  { name: "Reminder Emails", icon: iconMap.clock },
+  { name: "Request Form", icon: iconMap.document, onClick: () => navigate("/RequestForm") },
   { name: "Settings", icon: "/icons/settings.png" },
   { name: "Photos", icon: "/icons/photos.png" },
   { name: "Terminal", icon: "/icons/terminal.png" },
@@ -25,11 +40,8 @@ const apps = [
 ];
 
 
-
-  const [darkMode, setDarkMode] = useState(false);
-
   const navItems: NavItem[] = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/MassEmail" },
 
     {
       label: "Services",
@@ -38,14 +50,6 @@ const apps = [
         { label: "Mobile Apps", path: "/mobile" },
         { label: "UI/UX Design", path: "/design" },
       ],
-    },
-
-    // Slider toggle
-    {
-      label: "Dark Mode",
-      isToggle: true,
-      toggleValue: darkMode,
-      onToggle: (v) => setDarkMode(v),
     },
 
     // Button
@@ -60,7 +64,7 @@ const apps = [
 
 
     <div className="page-container">
-        <NavBar items={navItems} logoText="Menu" />
+        <NavBar items={navItems} logoText="Home" logo={grainger_logo}/>
 
         <AppGrid apps={apps} />
 

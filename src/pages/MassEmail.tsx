@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import type { NavItem } from "../components/Types";
 import EmailForm from "../components/EmailForm";
 import StatusBar from "../components/StatusBar";
+import grainger_logo from "/grainger_logo.png";
 import "../css/Layout.css"
 
 
@@ -74,7 +75,7 @@ export default function MassEmail() {
     return (
         <div className="page-container">
 
-            <NavBar items={navItems} logoText="Mass Email" />
+            <NavBar items={navItems} logoText="Home" logo={grainger_logo}/>
             
             <EmailForm />
 

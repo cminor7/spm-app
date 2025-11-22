@@ -1,7 +1,8 @@
-import {Routes, Route} from "react-router-dom"
-import './App.css'
-import Home from './pages/Home'
-import MassEmail from "./pages/MassEmail"
+import {Routes, Route} from "react-router-dom";
+import './App.css';
+import Home from './pages/Home';
+import MassEmail from "./pages/MassEmail";
+import RequestForm from "./pages/RequestForm";
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/MassEmail' element={<MassEmail />}/>
+        <Route path='/RequestForm' element={<RequestForm />}/>
       </Routes>
 
     </main>

@@ -5,5 +5,6 @@
   min-height: 100vh;      /* take full screen height */
   gap: 0rem;
   overflow: hidden;
+  align-items: center;  
  
 }

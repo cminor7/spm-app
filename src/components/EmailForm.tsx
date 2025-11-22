@@ -44,7 +44,7 @@ const EmailForm: React.FC = () => {
       {/* CC field */}
       <div className="form-row">
         <label className="input-label">CC:</label>
-        <input type="email" placeholder="you can add multiple emails like this -> email_1@company.com;email_2@company.com"/>
+        <input type="email" placeholder="multiple emails ex → email_1@grainger.com;email_2@grainger.ca"/>
       </div>
 
       {/* SUBJECT field */}
